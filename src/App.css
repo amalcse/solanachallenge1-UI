@@ -5,23 +5,25 @@
 .App-logo {
   height: 40vmin;
   pointer-events: none;
+  animation: App-logo-spin infinite 20s linear; /* Maintains logo animation */
 }
 
 @media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
+  .App-header {
+    background: linear-gradient(to right, #d2c8c8, #dd1864); /* Original background */
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    font-size: calc(10px + 2vmin);
+    color: white;
+    cursor: pointer;
+    transition: background 0.3s ease-in-out;
+    /* Ensure background-size is set for animation */
+    background-size: 200% 100%; /* Adjust values as needed */
+    animation: background-anim 5s ease-in-out infinite alternate;
   }
-}
-
-.App-header {
-  background: linear-gradient(to right, #d2c8c8, #6f23cd);
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
 }
 
 .custom-button {
@@ -37,7 +39,7 @@
 }
 
 .custom-button:hover {
-  background: linear-gradient(to right, #794AB4, #FF6B6B);
+  background: linear-gradient(to right, #3a0080, #ff00009c);
 }
 
 .App-link {
@@ -51,5 +53,16 @@
 
   to {
     transform: rotate(360deg);
+  }
+}
+
+/* New animation for background */
+@keyframes background-anim {
+  from {
+    background-position: 0 0;
+  }
+
+  to {
+    background-position: 100% 0;
   }
 }
